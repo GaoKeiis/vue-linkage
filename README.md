@@ -8,7 +8,7 @@ A Vue.js project
 
 > 效果
 
-![Image text](https://raw.githubusercontent.com/chilliness/linkage/master/src/assets/demo.gif)
+![Image text](https://raw.githubusercontent.com/chilliness/vue-linkage/master/src/assets/demo.gif)
 
 > 注意事项
 
@@ -17,14 +17,14 @@ A Vue.js project
 
 2、本实例是用vue-cli提供的webpack模板构建
 
-3、CSS代码使用了sass编写，JS代码部分使用了ES6
+3、CSS代码使用了Sass编写
 
-4、如果你想直接使用，请确保你安装了mint-ui、node-sass、sass-loader及babel
+4、如果你想直接使用，请确保你安装了mint-ui(版本需指定为2.2.7，否则可能出现异常)、node-sass、sass-loader
 
 5、使用的时候请在main.js中加入下面三行代码
 
 import 'mint-ui/lib/style.css';
-import {Picker} from 'mint-ui';
+import { Picker } from 'mint-ui';
 Vue.component(Picker.name, Picker);
 ```
 
@@ -47,5 +47,3 @@ npm run build
 # build for production and view the bundle analyzer report
 npm run build --report
 ```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

@@ -6,7 +6,7 @@ import router from './router';
 
 // mint-ui引入
 import 'mint-ui/lib/style.css';
-import {Picker} from 'mint-ui';
+import { Picker } from 'mint-ui';
 Vue.component(Picker.name, Picker);
 
 Vue.config.productionTip = false;

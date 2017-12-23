@@ -1,5 +1,5 @@
 {
-  "name": "Linkage",
+  "name": "vue-linkage",
   "version": "1.0.0",
   "description": "A Vue.js project",
   "author": "xiaohan <xiaohanadmin@163.com>",
@@ -11,7 +11,7 @@
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
-    "mint-ui": "^2.2.7",
+    "mint-ui": "2.2.7",
     "vue": "^2.2.6",
     "vue-router": "^2.3.1"
   },
