@@ -7,9 +7,9 @@
     <div class="pick-mark" v-show="addressFlag">
       <div class="btn-box">
         <a class="btn-cancel" @click="addressFlag = !addressFlag">取消</a>
-        <a class="btn-sure" @click="onFillAddress">确定</a>
+        <a class="btn-sure" @click="handlerFillAddress">确定</a>
       </div>
-      <mt-picker class="select" :slots="slots" value-key="aname" @change="onValuesChange"></mt-picker>
+      <mt-picker class="select" :slots="slots" valueKey="aname" @change="handlerValChange" ref="picker"></mt-picker>
     </div>
   </div>
 </template>
@@ -26,43 +26,35 @@ export default {
       addressFlag: false
     };
   },
-  mounted() {
-    this.onInitAddress();
-  },
   methods: {
-    onInitAddress() {
-      this.slots[0].values = address.filter((item, index) => {
-        if (item.apid == 0) {
-          return item;
-        }
-      });
-    },
-    onFillAddress() {
+    handlerFillAddress() {
       // 填入省市区
       this.address = this.tempAddress;
       this.addressFlag = !this.addressFlag;
     },
-    onValuesChange(picker, values) {
+    handlerValChange(picker, values) {
       // 防止没有省份时报错
       if (values[0]) {
-        this.slots[1].values = address.filter((item, index) => {
-          if (item.apid == values[0].aid) {
-            return item;
-          }
-        });
+        picker.setSlotValues(
+          1,
+          address.filter(item => item.apid === values[0].aid)
+        );
       }
       // 防止没有市时报错
       if (values[1]) {
-        this.slots[2].values = address.filter((item, index) => {
-          if (item.apid == values[1].aid) {
-            return item;
-          }
-        });
+        picker.setSlotValues(
+          2,
+          address.filter(item => item.apid === values[1].aid)
+        );
       }
       // 防止没有区时报错
       if (values[2]) {
-        // 这里可以指定地址符，此处以空格进行连接
-        this.tempAddress = values[0].aname + ' ' + values[1].aname + ' ' + values[2].aname;
+        // 这里可以指定地址符之间的连接符，此处以空格进行连接
+        this.tempAddress = [
+          values[0].aname,
+          values[1].aname,
+          values[2].aname
+        ].join(' ');
       }
     }
   }
@@ -89,11 +81,12 @@ export default {
       box-sizing: border-box;
     }
     .btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       flex: 0 0 80px;
       width: 80px;
       height: 30px;
-      line-height: 30px;
-      text-align: center;
       border: 1px solid #ccc;
       border-left: 0 none;
       box-sizing: border-box;

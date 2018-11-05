@@ -8,7 +8,7 @@ A Vue.js project
 
 > 效果
 
-![Image text](https://raw.githubusercontent.com/chilliness/vue-linkage/master/src/assets/demo.gif)
+![最终效果](/demo/demo.gif)
 
 > 注意事项
 
@@ -19,7 +19,7 @@ A Vue.js project
 
 3、CSS代码使用了Sass编写
 
-4、如果你想直接使用，请确保你安装了mint-ui(版本需指定为2.2.7，否则可能出现异常)、node-sass、sass-loader
+4、如果你想直接使用，请确保你安装了mint-ui、node-sass、sass-loader
 
 5、使用的时候请在main.js中加入下面三行代码
 
@@ -27,10 +27,6 @@ import 'mint-ui/lib/style.css';
 import { Picker } from 'mint-ui';
 Vue.component(Picker.name, Picker);
 ```
-
-> 最后一句
-
-虽然[mint-ui](http://mint-ui.github.io/#!/zh-cn)功能强大，但是官方文档做的不太友好，希望官方能借鉴一下[element ui](http://element.eleme.io/#/zh-CN)的文档，最后感谢饿了么团队的无私奉献。
 
 ## Build Setup
 

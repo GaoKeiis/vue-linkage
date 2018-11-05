@@ -16888,24 +16888,25 @@ var address = [
     aid: 45103,
     aname: '花莲县',
     apid: 515
-  }];
+  }
+];
 
 var slots = [
   {
     flex: 1,
-    values: [],
+    values: address.filter(item => item.apid === 0),
     className: 'slot1',
     textAlign: 'center'
   },
   {
     flex: 1,
-    values: [],
+    values: address.filter(item => item.apid === 1),
     className: 'slot2',
     textAlign: 'center'
   },
   {
     flex: 1,
-    values: [],
+    values: address.filter(item => item.apid === 36),
     className: 'slot3',
     textAlign: 'center'
   }

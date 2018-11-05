@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import LinkageComponent from '@/components/linkage/linkage.component';
+import Linkage from '@/components/linkage';
 
 Vue.use(Router);
 
@@ -9,7 +9,7 @@ export default new Router({
     {
       path: '/',
       name: 'linkage',
-      component: LinkageComponent
+      component: Linkage
     }
   ]
 });
